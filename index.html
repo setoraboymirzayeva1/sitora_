@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <title>Sitora | Shaxsiy Veb Sayt</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:Poppins}
+    body{background:#122655;color:#fff}
+    header{min-height:100vh;background:linear-gradient(120deg,#811ffa,#5a066f);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:20px}
+    header h1{font-size:3rem}
+    header span{color:#c30868}
+    nav{position:fixed;top:0;width:100%;background:#1e2440;display:flex;justify-content:center;gap:30px;padding:15px;z-index:999}
+    nav a{color:white;text-decoration:none;font-weight:500}
+    nav a:hover{color:#2b91bc}
+
+    section{padding:80px 10%}
+    .about{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+    .about img{width:100%;border-radius:20px;box-shadow:0 0 25px #144358}
+
+    .skills,.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px}
+    .card{background:#051660;padding:25px;border-radius:20px;transition:.3s}
+    .card:hover{transform:translateY(-10px);box-shadow:0 0 20px #057727}
+
+    footer{text-align:center;padding:30px;background:#1e3496;color:#94a3b8}
+
+    @media(max-width:768px){
+      .about{grid-template-columns:1fr}
+      header h1{font-size:2.2rem}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="#home">Bosh sahifa</a>
+  <a href="#about">Men haqimda</a>
+  <a href="#skills">Qobiliyatlar</a>
+  <a href="#gallery">Galereyam</a>
+  <a href="#contact">Aloqa</a>
+</nav>
+
+</header> <div class="hero-buttons">
+  <a href="#contact" class="btn gold">Bog‘lanish</a>
+</div>
+
+<div class="socials">
+  <a href="https://t.me/Otabekovna_0006" target="_blank">Telegram</a>
+  <a href="https://instagram.com/Otabekovna_0006" target="_blank">Instagram</a>
+</div>
+</header>
+
+<header id="home">
+  <h1>Salom, men <span>Sitora</span></h1>
+  <p>IT talaba | Veb dasturlashni o'ganyapman | Kreativ fikrlovchi</p>
+</header>
+
+<section id="about">
+  <div class="about">
+    <div>
+      <h2>MEN HAQIMDA</h2>
+      <p>
+       Assalomu alaykum! Men Qarshi Davlat Universiteti, Matematika va kompyuter ilmlari fakultitida Axborot tizimlari va texnologiyalari yunalishi bo'yicha  tahsil olaman.  
+        Zamonaviy texnologiyalar,  veb dizayn va dasturlashga qiziqaman.
+      </p>
+    </div>
+    <img src="c:\Users\acer\Downloads\photo_2026-02-03_01-12-22.jpg" alt="Profile" width="250">
+  </div>
+</section>
+
+<section id="skills">
+  <h2 style="text-align:center;margin-bottom:30px">QOBILIYATLARIM</h2>
+  <div class="skills">
+    <div class="card">💻 HTML / CSS / JS</div>
+    <div class="card">🎨 Web Design</div>
+    <div class="card">⚙️ Python / C++</div>
+    <div class="card">🚀 Loyihalar yaratish</div>
+  </div>
+</section>
+
+<section id="gallery">
+  <h2 style="text-align:center;margin-bottom:30px">GALEREYAM</h2>
+  <div class="gallery">
+
+    <div class="gallery-item">
+      <img src="c:\Users\acer\Downloads\photo_2026-01-30_19-52-06.jpg" alt="Profile" width="250">
+      <p>otda sayr qilayotgan qiz</p>
+    </div>
+
+    <div class="gallery-item">
+      <img src="c:\Users\acer\Downloads\photo_2026-01-06_20-32-12.jpg" alt="Profile" width="250">
+      <p>dengiz buyida ochlib turgan kitob</p>
+    </div>
+
+    <div class="gallery-item">
+      <img src="c:\Users\acer\Downloads\photo_2025-12-16_20-39-34.jpg" alt="Profile" width="250">
+      <p>yomgirli kunda ketayotgan qiz</p>
+    </div>
+
+  </div>
+
+</section>
+
+<section id="contact">
+  <h2 style="text-align:center">ALOQA</h2>
+  <p style="text-align:center;margin-top:10px">Email: setoraboymirzayeva1@gmail.com</p>
+  <p style="text-align:center;margin-top:10px">Telegram:@Otabekovna_0006</p>
+</section>
+
+<script>
+const elements = document.querySelectorAll("section, .card, .gallery img");
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.style.opacity = 1;
+      entry.target.style.transform = "translateY(0)";
+    }
+  });
+});
+
+elements.forEach(el => {
+  el.style.opacity = 0;
+  el.style.transform = "translateY(40px)";
+  el.style.transition = "0.6s ease";
+  observer.observe(el);
+});
+</script>
+
+
+<footer>
+  <p>© 2026 Sitora. Shaxsiy veb sayt.</p>
+</footer>
+
+</body>
+</html>
