@@ -12,30 +12,26 @@
             --mutolaa-orange: #FF8A00;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
-        
-        <style>
-/* ... oldingi kodlar ... */
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+            font-family: 'Poppins', sans-serif; 
+            scroll-behavior: smooth; 
+        }
 
-body {
-    /* Bu yerga xohlagan rasm linkini qo'yishingiz mumkin */
-    background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), 
-                url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1920&q=80');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    color: white;
-    scroll-behavior: smooth;
-    transition: 0.4s;
-}
-
-/* Light mode uchun rasm o'zgarishi */
-body.light {
-    background: #f4f4f4;
-    color: #111;
-}
-</style>v
-}
+        body {
+            /* ORQA FON UCHUN RASM LINKI */
+            background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7)), 
+                        url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 80px;
         }
 
         /* --- NAVIGATSIYA --- */
@@ -59,58 +55,56 @@ body.light {
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* --- SHAFFAF KARTALAR (GLASSMORPHISM) --- */
-        .glass-card {
-            width: 100%; max-width: 750px;
-            background: rgba(255, 255, 255, 0.8); /* Fon ko'rinib turishi uchun shaffof */
-            backdrop-filter: blur(15px); /* Orqani xiralashtirish */
-            border-radius: 40px; padding: 40px;
-            border: 1px solid rgba(255,255,255,0.4);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            animation: fadeInUp 1s ease-out both;
-            scroll-margin-top: 100px;
-        }
-
         .brand-name {
             font-family: 'Playfair Display', serif;
             font-size: 4rem; font-weight: 900; font-style: italic;
-            color: #fff; /* Fon to'q bo'lsa oq rang yaxshi tushadi */
+            color: #fff;
             text-shadow: 2px 4px 10px rgba(0,0,0,0.3);
+            margin: 40px 0;
             animation: fadeInUp 0.8s ease-out;
         }
 
-        /* Profil rasmi */
+        /* --- SHAFFAF KARTALAR --- */
+        .glass-card {
+            width: 90%; max-width: 750px;
+            background: rgba(255, 255, 255, 0.95); /* Ichidagi matn oson o'qilishi uchun */
+            backdrop-filter: blur(15px);
+            border-radius: 40px; padding: 40px;
+            border: 1px solid rgba(255,255,255,0.4);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            margin-bottom: 50px;
+            animation: fadeInUp 1s ease-out both;
+            color: #1e293b;
+        }
+
         .profile-header { text-align: center; }
         .profile-img-circle {
-            width: 150px; height: 150px; border-radius: 50%; border: 5px solid #fff;
+            width: 150px; height: 150px; border-radius: 50%; border: 5px solid var(--accent);
             margin: 0 auto 20px; object-fit: cover; box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
 
-        /* Bo'limlar sarlavhasi */
         h2 { font-size: 1.4rem; color: #1e293b; margin-bottom: 25px; text-align: center; text-transform: uppercase; letter-spacing: 2px; }
         h2::after { content: ''; display: block; width: 50px; height: 3px; background: var(--accent); margin: 8px auto; }
 
-        /* AI va Mutolaa bloklari */
         .ai-grid { display: grid; gap: 15px; }
         .ai-box { background: linear-gradient(135deg, #6366f1, #a855f7); color: white; border-radius: 25px; padding: 25px; text-decoration: none; text-align: center; transition: 0.3s; }
-        .ai-box:hover { transform: translateY(-5px); }
+        .ai-box:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(99, 102, 241, 0.4); }
 
         .mutolaa-box { border: 2px solid var(--mutolaa-orange); border-radius: 25px; padding: 25px; text-align: center; text-decoration: none; display: flex; flex-direction: column; align-items: center; transition: 0.3s; }
         .mutolaa-box:hover { background: rgba(255, 138, 0, 0.05); }
         .mutolaa-icon { width: 50px; height: 50px; background: var(--mutolaa-orange); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 25px; margin-bottom: 10px; }
 
-        /* Gallery */
         .gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-        .gallery-item { position: relative; border-radius: 25px; overflow: hidden; height: 200px; border: 3px solid #fff; }
-        .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
+        .gallery-item { border-radius: 20px; overflow: hidden; height: 180px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+        .gallery-item:hover img { transform: scale(1.1); }
 
-        /* Aloqa */
         .social-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-        .social-card { background: #fff; padding: 20px; border-radius: 25px; text-decoration: none; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 10px; transition: 0.3s; }
-        .social-card:hover { transform: translateY(-5px); }
+        .social-card { background: #f8fafc; padding: 20px; border-radius: 25px; text-decoration: none; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 10px; transition: 0.3s; border: 1px solid #e2e8f0; }
+        .social-card:hover { transform: translateY(-5px); background: #fff; box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
         .social-card img { width: 35px; }
 
-        footer { color: #fff; opacity: 0.8; font-size: 0.8rem; }
+        footer { padding: 40px; color: #fff; opacity: 0.8; font-size: 0.8rem; text-align: center; }
     </style>
 </head>
 <body>
@@ -126,13 +120,14 @@ body.light {
 
     <div class="brand-name" id="home">Sitora</div>
 
-    <header class="glass-card" id="about">
+    <section class="glass-card" id="about">
         <div class="profile-header">
             <img src="https://i.ibb.co/Q2spB24/Screenshot-20260114-211915.jpg" class="profile-img-circle" alt="Sitora">
             <h2>Boymirzayeva Sitora</h2>
             <p style="color: var(--accent); font-weight: 600;">IT Talaba & Kreativ Dasturchi</p>
+            <p style="margin-top: 15px; font-size: 0.9rem; line-height: 1.6;">Ma'lumotlar tahlili va sun'iy intellekt olamiga qiziquvchi dasturchi.</p>
         </div>
-    </header>
+    </section>
 
     <section class="glass-card" id="ai">
         <h2>AI Loyihalarim</h2>
@@ -180,4 +175,3 @@ body.light {
 
 </body>
 </html>
-
